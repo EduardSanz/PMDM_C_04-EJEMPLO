@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">04  - Creación de Vistas por Código</string>
+
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="grupo_a">A</string>
+    <string name="grupo_b">B</string>
+    <string name="grupo_c">C</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="crear">Crear</string>
+    <string-array name="sp_ciclos">
+        <item>Selecciona un ciclo</item>
+        <item>DAM</item>
+        <item>DAW</item>
+        <item>SMR</item>
+        <item>3D</item>
+    </string-array>
+</resources>
