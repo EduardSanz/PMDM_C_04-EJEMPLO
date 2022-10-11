@@ -12,6 +12,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.LayoutInflater;
 import android.view.View;
 
 import com.cieep.a04_creacindevistasporcdigo.databinding.ActivityMainBinding;
@@ -76,9 +77,19 @@ public class MainActivity extends AppCompatActivity {
         binding.contentMain.contenedorMain.removeAllViews();
 
         for (AlumnoModel alumno : alumnoModelArrayList) {
-            TextView txtAlumno = new TextView(MainActivity.this);
-            txtAlumno.setText(alumno.toString());
-            binding.contentMain.contenedorMain.addView(txtAlumno);
+            LayoutInflater layoutInflater = LayoutInflater.from(MainActivity.this);
+            View alumnoView = layoutInflater.inflate(R.layout.alumno_model_view, null);
+            TextView txtNombre = alumnoView.findViewById(R.id.lblNombreAlumnoView);
+            TextView txtApellidos = alumnoView.findViewById(R.id.lblApellidosAlumnoView);
+            TextView txtCiclo = alumnoView.findViewById(R.id.lblCiclosAlumnoView);
+            TextView txtGrupo = alumnoView.findViewById(R.id.lblGrupoAlumnoView);
+
+            txtNombre.setText(alumno.getNombre());
+            txtApellidos.setText(alumno.getApellidos());
+            txtCiclo.setText(alumno.getCiclo());
+            txtGrupo.setText(String.valueOf(alumno.getGrupo()));
+
+            binding.contentMain.contenedorMain.addView(alumnoView);
         }
     }
 
